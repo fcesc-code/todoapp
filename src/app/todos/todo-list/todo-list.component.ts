@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
+import { TODO_ACTIONS } from '../actions/todo.actions';
 import { TodoDTO } from '../models/todo.dto';
 // import { TodoService } from '../services/todo.service';
 
@@ -22,5 +23,7 @@ export class TodoListComponent implements OnInit {
       .select('todosApp')
       .subscribe((todosResponse) => (this.todos = todosResponse.todos));
     // this.todoService.getAllTodos().subscribe((todos) => console.log(todos));
+
+    this.store.dispatch(TODO_ACTIONS.getAllTodos());
   }
 }
