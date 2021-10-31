@@ -1,0 +1,15 @@
+{
+  "name": "todoapp",
+  "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "devDependencies": {
+    "@angular/cli": "^12.2.12"
+  }
+}
