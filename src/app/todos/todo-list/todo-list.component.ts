@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducer';
 import { TodoDTO } from '../models/todo.dto';
+// import { TodoService } from '../services/todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -11,9 +12,15 @@ import { TodoDTO } from '../models/todo.dto';
 export class TodoListComponent implements OnInit {
   todos: TodoDTO[] = [];
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    // private todoService: TodoService
+    private store: Store<AppState>
+  ) {}
 
   ngOnInit(): void {
-    this.store.select('todos').subscribe((todos) => (this.todos = todos));
+    this.store
+      .select('todosApp')
+      .subscribe((todosResponse) => (this.todos = todosResponse.todos));
+    // this.todoService.getAllTodos().subscribe((todos) => console.log(todos));
   }
 }
