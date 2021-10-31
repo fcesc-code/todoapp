@@ -10,7 +10,19 @@ const _todoReducer = createReducer(
   on(TODO_ACTIONS.createTodo, (state, { title }) => [
     ...state,
     new TodoDTO(title),
-  ])
+  ]),
+  on(TODO_ACTIONS.completeTodo, (state, { id }) => {
+    return state.map((todo) => {
+      if (todo.id === id) {
+        return {
+          ...todo,
+          done: true,
+        };
+      } else {
+        return todo;
+      }
+    });
+  })
 );
 
 export function todoReducer(state: any, action: any) {

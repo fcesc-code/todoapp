@@ -8,11 +8,16 @@ export const TODO_ACTIONS_TITLES = {
   create: prefix('create todo'),
   update: prefix('update todo'),
   delete: prefix('delete todo'),
+  complete: prefix('complete todo'),
 };
 
 export const TODO_ACTIONS = {
   createTodo: createAction(
     TODO_ACTIONS_TITLES.create,
     props<{ title: string }>()
+  ),
+  completeTodo: createAction(
+    TODO_ACTIONS_TITLES.complete,
+    props<{ id: number }>()
   ),
 };
