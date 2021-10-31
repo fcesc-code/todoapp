@@ -20,4 +20,8 @@ export const TODO_ACTIONS = {
     TODO_ACTIONS_TITLES.complete,
     props<{ id: number }>()
   ),
+  editTodo: createAction(
+    TODO_ACTIONS_TITLES.update,
+    props<{ id: number; title: string }>()
+  ),
 };

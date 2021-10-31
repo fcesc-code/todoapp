@@ -38,6 +38,16 @@ var _todoReducer = store_1.createReducer(exports.initialState, store_1.on(todo_a
             return todo;
         }
     });
+}), store_1.on(todo_actions_1.TODO_ACTIONS.editTodo, function (state, _a) {
+    var id = _a.id, title = _a.title;
+    return state.map(function (todo) {
+        if (todo.id === id) {
+            return __assign(__assign({}, todo), { title: title });
+        }
+        else {
+            return todo;
+        }
+    });
 }));
 function todoReducer(state, action) {
     return _todoReducer(state, action);

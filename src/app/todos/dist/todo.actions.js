@@ -14,5 +14,6 @@ exports.TODO_ACTIONS_TITLES = {
 };
 exports.TODO_ACTIONS = {
     createTodo: store_1.createAction(exports.TODO_ACTIONS_TITLES.create, store_1.props()),
-    completeTodo: store_1.createAction(exports.TODO_ACTIONS_TITLES.complete, store_1.props())
+    completeTodo: store_1.createAction(exports.TODO_ACTIONS_TITLES.complete, store_1.props()),
+    editTodo: store_1.createAction(exports.TODO_ACTIONS_TITLES.update, store_1.props())
 };

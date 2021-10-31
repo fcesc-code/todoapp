@@ -21,9 +21,16 @@ var TodoListItemComponent = /** @class */ (function () {
     };
     TodoListItemComponent.prototype.submitTask = function () {
         this.isEditing = false;
+        if (!this.titleInput.invalid && this.titleInput.value !== this.todo.title) {
+            this.store.dispatch(todo_actions_1.TODO_ACTIONS.editTodo({
+                id: this.todo.id,
+                title: this.titleInput.value
+            }));
+        }
     };
     TodoListItemComponent.prototype.editTask = function () {
         this.isEditing = true;
+        this.titleInput.setValue(this.todo.title);
     };
     TodoListItemComponent.prototype.completeTask = function () {
         this.store.dispatch(todo_actions_1.TODO_ACTIONS.completeTodo({ id: this.todo.id }));

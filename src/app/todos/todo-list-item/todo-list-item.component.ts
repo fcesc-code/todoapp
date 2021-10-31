@@ -25,10 +25,20 @@ export class TodoListItemComponent implements OnInit {
 
   submitTask() {
     this.isEditing = false;
+
+    if (!this.titleInput.invalid && this.titleInput.value !== this.todo.title) {
+      this.store.dispatch(
+        TODO_ACTIONS.editTodo({
+          id: this.todo.id,
+          title: this.titleInput.value,
+        })
+      );
+    }
   }
 
   editTask() {
     this.isEditing = true;
+    this.titleInput.setValue(this.todo.title);
   }
 
   completeTask() {
