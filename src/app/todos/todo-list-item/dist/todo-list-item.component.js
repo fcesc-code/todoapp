@@ -35,7 +35,9 @@ var TodoListItemComponent = /** @class */ (function () {
     TodoListItemComponent.prototype.completeTask = function () {
         this.store.dispatch(todo_actions_1.TODO_ACTIONS.completeTodo({ id: this.todo.id }));
     };
-    TodoListItemComponent.prototype.deleteTask = function () { };
+    TodoListItemComponent.prototype.deleteTask = function () {
+        this.store.dispatch(todo_actions_1.TODO_ACTIONS.deleteTodo({ id: this.todo.id }));
+    };
     __decorate([
         core_1.Input()
     ], TodoListItemComponent.prototype, "todo");

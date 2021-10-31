@@ -34,6 +34,9 @@ const _todoReducer = createReducer(
         return todo;
       }
     });
+  }),
+  on(TODO_ACTIONS.deleteTodo, (state, { id }) => {
+    return state.filter((todo) => todo.id !== id);
   })
 );
 

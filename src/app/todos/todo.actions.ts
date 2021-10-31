@@ -24,4 +24,5 @@ export const TODO_ACTIONS = {
     TODO_ACTIONS_TITLES.update,
     props<{ id: number; title: string }>()
   ),
+  deleteTodo: createAction(TODO_ACTIONS_TITLES.delete, props<{ id: number }>()),
 };

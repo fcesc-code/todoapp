@@ -48,6 +48,9 @@ var _todoReducer = store_1.createReducer(exports.initialState, store_1.on(todo_a
             return todo;
         }
     });
+}), store_1.on(todo_actions_1.TODO_ACTIONS.deleteTodo, function (state, _a) {
+    var id = _a.id;
+    return state.filter(function (todo) { return todo.id !== id; });
 }));
 function todoReducer(state, action) {
     return _todoReducer(state, action);
