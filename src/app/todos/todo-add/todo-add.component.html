@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="insert title for task ..."
+      [formControl]="titleInput"
+    />
+    <div class="input-group-append">
+      <button (click)="addTodoTask()" class="btn btn-success" type="button">
+        ADD TODO TASK
+      </button>
+    </div>
+  </div>
+</div>

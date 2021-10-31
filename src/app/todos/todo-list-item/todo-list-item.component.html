@@ -1,0 +1,37 @@
+<!-- Edit mode -->
+<div class="container mt-2" *ngIf="isEditing">
+  <div class="row">
+    <div class="col-4">
+      <input
+        type="text"
+        class="form-control hidden"
+        [formControl]="titleInput"
+      />
+    </div>
+    <div class="col-8">
+      <button (click)="submitTask()" class="btn btn-primary ml-2" type="button">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Read mode -->
+<div class="container mt-2" *ngIf="!isEditing">
+  <div class="row">
+    <div class="col-4" [class.completed]="todo.done">
+      <p>{{ todo.title }}</p>
+    </div>
+    <div class="col-8">
+      <button (click)="completeTask()" class="btn btn-success" type="button">
+        Done
+      </button>
+      <button (click)="editTask()" class="btn btn-primary ml-2" type="button">
+        Edit
+      </button>
+      <button (click)="deleteTask()" class="btn btn-danger ml-2" type="button">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
